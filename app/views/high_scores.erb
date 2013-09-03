@@ -1,11 +1,12 @@
 <div class="results">
 <h1>Fastest Times</h1>
-
+<marquee scrollamount="2" loop="true" direction="up">
 <ol>
 <% Game.all.order('track_time').limit(20).each do |game| %>
   <li><%= game.winner %>  - - - - - <%= (game.track_time) / 1000.0 %> seconds</li>
   <% end %>
 </ol>
+</marquee>
 
 <a href="/">New Game</a>
 
